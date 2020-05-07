@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SpotMeal</string>
+    <string name="APP_PREFERENCES_NAME">Authorization</string>
 </resources>

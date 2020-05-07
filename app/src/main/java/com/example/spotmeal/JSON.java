@@ -2,6 +2,7 @@ package com.example.spotmeal;
 
 import android.util.Log;
 
+import com.example.spotmeal.objects.Token;
 import com.example.spotmeal.objects.User;
 
 import org.codehaus.jackson.map.ObjectMapper;
@@ -26,6 +27,21 @@ public class JSON {
             Log.e(LOG_TAG,"Parsing error");
         }
         return user;
+    }
+
+    public static Token getToken(String json)
+    {
+        ObjectMapper mapper = new ObjectMapper();
+        System.out.println(json);
+        Token token = new Token();
+        try {
+            token = mapper.readValue(json,Token.class);
+        }
+        catch (IOException e)
+        {
+            Log.e(LOG_TAG,"Parsing error");
+        }
+        return token;
     }
 
     public static String buildUser(User user) throws IOException {
