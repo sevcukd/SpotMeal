@@ -16,6 +16,9 @@ public class SpotById {
     private boolean hasFreeWifi;
     private WorkingTime workingTime; //час роботи
 
+    private double rating;
+    private double prices;
+
     private String createdAt;
     private String updatedAt;
 

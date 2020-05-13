@@ -49,8 +49,8 @@ public class LogIn extends AppCompatActivity {
     }
     public void onButtonClickSignUp (View view){
         Intent intent5 = new Intent(LogIn.this, SignUp.class);
-        this.finish();
         startActivity(intent5);
+        this.finish();
     }
 
     class APIQueryTask extends AsyncTask<User,Void, ServerResponse> {

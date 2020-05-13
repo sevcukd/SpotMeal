@@ -2,6 +2,8 @@ package com.example.spotmeal;
 
 import android.util.Log;
 
+import com.example.spotmeal.objects.AllSpot;
+import com.example.spotmeal.objects.FinaliSpot;
 import com.example.spotmeal.objects.Token;
 import com.example.spotmeal.objects.User;
 
@@ -42,6 +44,35 @@ public class JSON {
             Log.e(LOG_TAG,"Parsing error");
         }
         return token;
+    }
+    public static FinaliSpot getFinaliSpot(String json)
+    {
+        ObjectMapper mapper = new ObjectMapper();
+        System.out.println(json);
+        FinaliSpot finaliSpot = new FinaliSpot();
+        try {
+            finaliSpot = mapper.readValue(json,FinaliSpot.class);
+        }
+        catch (IOException e)
+        {
+            Log.e(LOG_TAG,"Parsing error");
+        }
+        return finaliSpot;
+    }
+
+    public static AllSpot getAllSpot(String json)
+    {
+        ObjectMapper mapper = new ObjectMapper();
+        System.out.println(json);
+        AllSpot allSpot = new AllSpot();
+        try {
+            allSpot = mapper.readValue(json,AllSpot.class);
+        }
+        catch (IOException e)
+        {
+            Log.e(LOG_TAG,"Parsing error");
+        }
+        return allSpot;
     }
 
     public static String buildUser(User user) throws IOException {
