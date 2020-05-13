@@ -2,6 +2,7 @@ package com.example.spotmeal.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -45,10 +46,16 @@ public class SignUp extends AppCompatActivity {
         if(!emailString.isEmpty()&&!passwordString.isEmpty()&&!nameString.isEmpty()&&passwordString.equals(confirmPasswordString)){
             User user = new User(emailString,passwordString,nameString);
             new APIQueryTask().execute(user);
+
         }else
         {
             Toast.makeText(getApplicationContext(),"Провірь поля, далбадятел",Toast.LENGTH_LONG).show();
         }
+    }
+    public void onButtonClickLogin (View view){
+        Intent intent4 = new Intent(SignUp.this, LogIn.class);
+        this.finish();
+        startActivity(intent4);
     }
     class APIQueryTask extends AsyncTask<User,Void, ServerResponse> {
 
