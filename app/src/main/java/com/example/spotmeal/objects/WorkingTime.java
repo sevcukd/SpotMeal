@@ -17,7 +17,6 @@ public class WorkingTime {
     private Friday friday;
     private Saturday saturday;
     private Sunday sunday;
-
     public WorkingTime() {
 
     }

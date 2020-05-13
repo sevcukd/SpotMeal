@@ -17,10 +17,21 @@ public class Day {
         this.open = open;
     }
 
+    public boolean isClosed() {
+        return closed;
+    }
+
+    public void setClosed(boolean closed) {
+        this.closed = closed;
+    }
+
     public Day(){
 
     }
 
+
+
+    private boolean closed;
     private String close;
     private String open;
 }

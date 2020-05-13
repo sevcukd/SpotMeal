@@ -10,6 +10,8 @@ import android.widget.Toast;
 
 import com.example.spotmeal.R;
 
+import java.util.concurrent.TimeUnit;
+
 public class MainActivity extends AppCompatActivity {
     SharedPreferences mData;
 
@@ -19,8 +21,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mData = getSharedPreferences(getString(R.string.APP_PREFERENCES_NAME), Context.MODE_PRIVATE);
         if(mData.contains(getString(R.string.APP_PREFERENCES_NAME))){
-            Toast.makeText(getApplicationContext(),"Всьо охуєнно",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"Ви авторизувались",Toast.LENGTH_LONG).show();
             Intent intent = new Intent(MainActivity.this, SignUp.class);
+            try {
+                TimeUnit.SECONDS.sleep(3);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             startActivity(intent);
         }else{
             Intent intent = new Intent(MainActivity.this, LogIn.class);

@@ -1,6 +1,10 @@
 package com.example.spotmeal.objects;
 
-public class Spot {
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+
+public class SpotById {
 
     private String id;
     private String name;
@@ -9,10 +13,33 @@ public class Spot {
     private String address;
     private String phone;
     private String description;
+    private boolean hasFreeWifi;
+    private WorkingTime workingTime; //час роботи
 
-    public Spot() {
+    private String createdAt;
+    private String updatedAt;
+
+    public SpotById() {
 
     }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public String getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+
     public String getId() {
         return id;
     }
@@ -85,6 +112,5 @@ public class Spot {
         this.workingTime = workingTime;
     }
 
-    private boolean hasFreeWifi;
-    private WorkingTime workingTime;
+
 }

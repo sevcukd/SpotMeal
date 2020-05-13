@@ -43,7 +43,7 @@ public class LogIn extends AppCompatActivity {
             new APIQueryTask().execute(user);
         }else
             {
-                Toast.makeText(getApplicationContext(),"Провірь поля, далбадятел",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"Перевірте поля",Toast.LENGTH_LONG).show();
             }
     }
 
@@ -75,7 +75,7 @@ public class LogIn extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),"You authorized",Toast.LENGTH_LONG).show();
             }
             else{
-                Toast.makeText(getApplicationContext(),"Хуйло",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"Помилка авторизації",Toast.LENGTH_LONG).show();
             }
 
 
