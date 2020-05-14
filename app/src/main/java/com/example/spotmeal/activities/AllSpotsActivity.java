@@ -32,7 +32,7 @@ public class AllSpotsActivity extends AppCompatActivity {
 //            Links link = new Links();
 //            ServerResponse response = null;
 //            try {
-//                response = Requests.postRequest(link.getSignInURL(), JSON.buildUser(allSpots[0]));
+//                response = Requests.postRequest(link.getSpotsURL(), JSON.getAllSpot(allSpots[0]));
 //            } catch (IOException e) {
 //                e.printStackTrace();
 //            }
