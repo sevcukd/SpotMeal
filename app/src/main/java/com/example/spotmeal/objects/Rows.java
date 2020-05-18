@@ -1,5 +1,9 @@
 package com.example.spotmeal.objects;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+
 public class Rows {
     public String getId() {
         return id;
@@ -9,12 +13,12 @@ public class Rows {
         this.id = id;
     }
 
-    public UserForRows getUserForRows() {
-        return userForRows;
+    public UserForRows getUser() {
+        return user;
     }
 
-    public void setUserForRows(UserForRows userForRows) {
-        this.userForRows = userForRows;
+    public void setUser(UserForRows user) {
+        this.user = user;
     }
 
     public String getSpot() {
@@ -33,19 +37,19 @@ public class Rows {
         this.comment = comment;
     }
 
-    public double getRating() {
+    public int getRating() {
         return rating;
     }
 
-    public void setRating(double rating) {
+    public void setRating(int rating) {
         this.rating = rating;
     }
 
-    public double getPrices() {
+    public int getPrices() {
         return prices;
     }
 
-    public void setPrices(double prices) {
+    public void setPrices(int prices) {
         this.prices = prices;
     }
 
@@ -66,11 +70,11 @@ public class Rows {
     }
 
     private String id;
-    private UserForRows userForRows;
+    private UserForRows user;
     private String spot;
     private String comment;
-    private double rating;
-    private double prices;
+    private int rating;
+    private int prices;
     private String createdAt;
     private String updatedAt;
 

@@ -12,8 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.AllSpotsActivity"></activity>
-        <activity android:name=".activities.SpotActiviti" />
+        <activity android:name=".activities.createReviewActivity"></activity>
+        <activity android:name=".CreateSpotActivity" />
+        <activity android:name=".activities.SpotActivity" />
+        <activity android:name=".activities.AllSpotsActivity" />
         <activity android:name=".activities.SignUp" />
         <activity android:name=".activities.LogIn" />
         <activity android:name=".activities.MainActivity">

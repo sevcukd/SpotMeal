@@ -1,6 +1,10 @@
 package com.example.spotmeal.objects;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class UserForRows {
+
     private String id;
     private String name;
     private String picture;

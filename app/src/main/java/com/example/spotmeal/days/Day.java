@@ -1,5 +1,8 @@
 package com.example.spotmeal.days;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Day {
     public String getClose() {
         return close;

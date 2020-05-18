@@ -8,6 +8,9 @@ import com.example.spotmeal.days.Thursday;
 import com.example.spotmeal.days.Tuesday;
 import com.example.spotmeal.days.Wednesday;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class WorkingTime {
 
     private Monday monday;

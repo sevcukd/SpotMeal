@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     class MyTimerTask extends TimerTask {
         @Override
         public void run() {
-            Intent intent = new Intent(MainActivity.this, SignUp.class);
+            Intent intent = new Intent(MainActivity.this, AllSpotsActivity.class);
             startActivity(intent);
             finish();
         }
@@ -33,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mData = getSharedPreferences(getString(R.string.APP_PREFERENCES_NAME), Context.MODE_PRIVATE);
+//        Intent intent = new Intent(MainActivity.this,AllSpotsActivity.class);
+//        startActivity(intent);
         if(mData.contains(getString(R.string.APP_PREFERENCES_NAME))){
 //            Toast.makeText(getApplicationContext(),"Ви авторизувались",Toast.LENGTH_LONG).show();
             timer.schedule(mTimerTask, 1000);

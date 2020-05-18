@@ -6,18 +6,18 @@ import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 public class FinaliSpot {
 
-    private SpotById spotById;
+    private SpotById spot;
     private Reviews reviews;
 
     public FinaliSpot(){
     }
 
-    public SpotById getSpotById() {
-        return spotById;
+    public SpotById getSpot() {
+        return spot;
     }
 
-    public void setSpotById(SpotById spotById) {
-        this.spotById = spotById;
+    public void setSpot(SpotById spot) {
+        this.spot = spot;
     }
 
     public Reviews getReviews() {

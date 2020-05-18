@@ -2,6 +2,8 @@ package com.example.spotmeal.objects;
 
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
+import java.util.List;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 
 public class SpotById {
@@ -14,10 +16,37 @@ public class SpotById {
     private String phone;
     private String description;
     private boolean hasFreeWifi;
-    private WorkingTime workingTime; //час роботи
 
-    private double rating;
+    public void setWorkingTime(List<WorkingTime> workingTime) {
+        this.workingTime = workingTime;
+    }
+
+    private List<WorkingTime> workingTime;
+
+
+
+    private boolean approved;
+    private String user;
+
     private double prices;
+    private double rating;
+
+    public double getRating() {
+        return rating;
+    }
+
+    public void setRating(double rating) {
+        this.rating = rating;
+    }
+
+    public double getPrices() {
+        return prices;
+    }
+
+    public void setPrices(double prices) {
+        this.prices = prices;
+    }
+
 
     private String createdAt;
     private String updatedAt;
@@ -107,13 +136,21 @@ public class SpotById {
         this.hasFreeWifi = hasFreeWifi;
     }
 
-    public WorkingTime getWorkingTime() {
-        return workingTime;
+   
+    public boolean isApproved() {
+        return approved;
     }
 
-    public void setWorkingTime(WorkingTime workingTime) {
-        this.workingTime = workingTime;
+    public void setApproved(boolean approved) {
+        this.approved = approved;
     }
 
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
 
 }
