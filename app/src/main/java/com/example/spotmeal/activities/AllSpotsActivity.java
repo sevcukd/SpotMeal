@@ -71,18 +71,18 @@ public class AllSpotsActivity extends AppCompatActivity {
 //              НАЙДИ НОРМ ФОТКИ
                     if (spots.getSpost().get(i).isVegan()== true){
                         //ЯКЩО ВЕГАН ТОДІ ТАКА ФОТКА
-                        wifiImageView.setImageResource(R.drawable.wifi);
+                        wifiImageView.setImageResource(R.drawable.vegant);
                     }
                     else{
                         //ЯКЩО НЕ ВЕГАН
-                        wifiImageView.setImageResource(R.drawable.wifi);
+                        wifiImageView.setImageResource(R.drawable.veganf);
                     }
                     //ТУТ ТАК САМО
                     if (spots.getSpost().get(i).isHasFreeWifi()== true){
-                        veganImageView.setImageResource(R.drawable.wifi);
+                        veganImageView.setImageResource(R.drawable.wifit);
                     }
                     else{
-                        veganImageView.setImageResource(R.drawable.wifi);
+                        veganImageView.setImageResource(R.drawable.wifif);
                     }
                     wifiImageView.setPadding(-100,300,0,0);
                     veganImageView.setPadding(100,300,0,0);

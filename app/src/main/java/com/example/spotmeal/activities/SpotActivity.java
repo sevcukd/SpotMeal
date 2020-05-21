@@ -67,7 +67,7 @@ public class SpotActivity extends AppCompatActivity {
 
 
 
-//                CardView card = new CardView(SpotActivity.this);
+                CardView card = new CardView(SpotActivity.this);
                 TextView titleTextView = new TextView(SpotActivity.this);
                 TextView categoryTextView = new TextView(SpotActivity.this);
                 TextView phoneTextView = new TextView(SpotActivity.this);
@@ -75,23 +75,24 @@ public class SpotActivity extends AppCompatActivity {
                 ImageView wifiImageView = new ImageView(SpotActivity.this);
                 ImageView veganImageView = new ImageView(SpotActivity.this);
 
-
 //              НАЙДИ НОРМ ФОТКИ
-                if (spot.getSpot().isVegan() == true){
+                if (spot.getSpot().isVegan()== true){
                     //ЯКЩО ВЕГАН ТОДІ ТАКА ФОТКА
-                    wifiImageView.setImageResource(R.drawable.wifi);
+                    wifiImageView.setImageResource(R.drawable.vegant);
                 }
                 else{
                     //ЯКЩО НЕ ВЕГАН
-                    wifiImageView.setImageResource(R.drawable.wifi);
+                    wifiImageView.setImageResource(R.drawable.veganf);
                 }
                 //ТУТ ТАК САМО
-                if (spot.getSpot().isVegan() == true){
-                    veganImageView.setImageResource(R.drawable.wifi);
+                if (spot.getSpot().isHasFreeWifi()== true){
+                    veganImageView.setImageResource(R.drawable.wifit);
                 }
                 else{
-                    veganImageView.setImageResource(R.drawable.wifi);
+                    veganImageView.setImageResource(R.drawable.wifif);
                 }
+                wifiImageView.setPadding(-100,400,0,0);
+                veganImageView.setPadding(100,400,0,0);
 
                 phoneTextView.setText("Телефон: " + spot.getSpot().getPhone());
 
@@ -107,13 +108,17 @@ public class SpotActivity extends AppCompatActivity {
                 categoryTextView.setId(0);
                 categoryTextView.setTextSize(20);
 
-                spotLinear.addView(titleTextView);
-                spotLinear.addView(categoryTextView);
-                spotLinear.addView(phoneTextView);
-                spotLinear.addView(descriptionTextView);
-                spotLinear.addView(wifiImageView);
-                spotLinear.addView(veganImageView);
-//                spotLinear.addView(wifiImageView);
+
+                card.addView(titleTextView);
+                categoryTextView.setPadding(0,100,0,0);
+                card.addView(categoryTextView);
+                phoneTextView.setPadding(0,150,0,0);
+                card.addView(phoneTextView);
+                descriptionTextView.setPadding(0,200,0,0);
+                card.addView(descriptionTextView);
+                card.addView(wifiImageView);
+                card.addView(veganImageView);
+                spotLinear.addView(card);
                 for(int i =0;i<spot.getReviews().getRows().size();i++){
                     CardView cardReview = new CardView(SpotActivity.this);
 
