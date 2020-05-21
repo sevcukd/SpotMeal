@@ -1,10 +1,39 @@
 package com.example.spotmeal.objects;
 
+import android.content.Intent;
+
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+import org.codehaus.jackson.annotate.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 
 public class Rows {
+    @JsonProperty("id")
+    private String id;
+
+    @JsonProperty("user")
+    private UserForRows user;
+
+    @JsonProperty("spot")
+    private String spot;
+
+    @JsonProperty("comment")
+    private String comment;
+
+    @JsonProperty("rating")
+    private double rating;
+
+    @JsonProperty("prices")
+    private double prices;
+
+    @JsonProperty("createdAt")
+    private String createdAt;
+
+    @JsonProperty("updatedAt")
+    private String updatedAt;
+
+    public Rows(){}
+
     public String getId() {
         return id;
     }
@@ -37,19 +66,19 @@ public class Rows {
         this.comment = comment;
     }
 
-    public int getRating() {
+    public double getRating() {
         return rating;
     }
 
-    public void setRating(int rating) {
+    public void setRating(double rating) {
         this.rating = rating;
     }
 
-    public int getPrices() {
+    public double getPrices() {
         return prices;
     }
 
-    public void setPrices(int prices) {
+    public void setPrices(double prices) {
         this.prices = prices;
     }
 
@@ -69,14 +98,20 @@ public class Rows {
         this.updatedAt = updatedAt;
     }
 
-    private String id;
-    private UserForRows user;
-    private String spot;
-    private String comment;
-    private int rating;
-    private int prices;
-    private String createdAt;
-    private String updatedAt;
+
+
+
+
+
+
+    public Rows (String spot, String comment, String rating, String price){
+
+        this.spot = spot;
+        this.comment = comment;
+        this.rating = Double.parseDouble(rating);
+        this.prices = Double.parseDouble(price);
+
+    }
 
 
 }

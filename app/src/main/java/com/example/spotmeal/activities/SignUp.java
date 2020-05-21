@@ -64,7 +64,7 @@ public class SignUp extends AppCompatActivity {
             Links link = new Links();
             ServerResponse response = null;
             try {
-                response = Requests.postRequest(link.getSignUpURL(), JSON.buildUser(users[0]));
+                response = Requests.postRequest(link.getSignUpURL(), JSON.buildUser(users[0]),mData.getString(getString(R.string.APP_PREFERENCES_NAME),""));
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -82,7 +82,9 @@ public class SignUp extends AppCompatActivity {
                 SharedPreferences.Editor editor = mData.edit();
                 editor.putString(getString(R.string.APP_PREFERENCES_NAME),token.getToken());
                 editor.apply();
-                Toast.makeText(getApplicationContext(),"Ти зареєструвався",Toast.LENGTH_LONG).show();
+//                Toast.makeText(getApplicationContext(),"Ти зареєструвався",Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(SignUp.this, AllSpotsActivity.class);
+                startActivity(intent);
                 SignUp.this.finish();
             }
             else{

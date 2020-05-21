@@ -4,6 +4,7 @@ import android.util.Log;
 
 import com.example.spotmeal.objects.AllSpot;
 import com.example.spotmeal.objects.FinaliSpot;
+import com.example.spotmeal.objects.Rows;
 import com.example.spotmeal.objects.Token;
 import com.example.spotmeal.objects.User;
 
@@ -80,6 +81,18 @@ public class JSON {
         String result = null;
         try {
             result = mapper.writeValueAsString(user);
+        }catch (IOException e)
+        {
+            Log.e(LOG_TAG,"Parsing error");
+        }
+        return result;
+    }
+
+    public static String buildRows(Rows rows) throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        String result = null;
+        try {
+            result = mapper.writeValueAsString(rows);
         }catch (IOException e)
         {
             Log.e(LOG_TAG,"Parsing error");

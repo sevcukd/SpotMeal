@@ -60,7 +60,7 @@ public class LogIn extends AppCompatActivity {
             Links link = new Links();
             ServerResponse response = null;
             try {
-                response = Requests.postRequest(link.getSignInURL(), JSON.buildUser(users[0]));
+                response = Requests.postRequest(link.getSignInURL(), JSON.buildUser(users[0]),mData.getString(getString(R.string.APP_PREFERENCES_NAME),""));
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -78,7 +78,11 @@ public class LogIn extends AppCompatActivity {
                 SharedPreferences.Editor editor = mData.edit();
                 editor.putString(getString(R.string.APP_PREFERENCES_NAME),token.getToken());
                 editor.apply();
-                Toast.makeText(getApplicationContext(),"You authorized",Toast.LENGTH_LONG).show();
+//                Toast.makeText(getApplicationContext(),"You authorized",Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(LogIn.this, AllSpotsActivity.class);
+                startActivity(intent);
+                LogIn.this.finish();
+
             }
             else{
                 Toast.makeText(getApplicationContext(),"Помилка авторизації",Toast.LENGTH_LONG).show();

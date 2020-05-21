@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -61,8 +62,30 @@ public class AllSpotsActivity extends AppCompatActivity {
 
                     TextView titleTextView = new TextView(AllSpotsActivity.this);
                     titleTextView.setPadding(0,0,0,0);
-                    TextView veganTextView = new TextView(AllSpotsActivity.this);
                     TextView categoryTextView = new TextView(AllSpotsActivity.this);
+
+                    ImageView wifiImageView = new ImageView(AllSpotsActivity.this);
+                    ImageView veganImageView = new ImageView(AllSpotsActivity.this);
+
+
+//              НАЙДИ НОРМ ФОТКИ
+                    if (spots.getSpost().get(i).isVegan()== true){
+                        //ЯКЩО ВЕГАН ТОДІ ТАКА ФОТКА
+                        wifiImageView.setImageResource(R.drawable.wifi);
+                    }
+                    else{
+                        //ЯКЩО НЕ ВЕГАН
+                        wifiImageView.setImageResource(R.drawable.wifi);
+                    }
+                    //ТУТ ТАК САМО
+                    if (spots.getSpost().get(i).isHasFreeWifi()== true){
+                        veganImageView.setImageResource(R.drawable.wifi);
+                    }
+                    else{
+                        veganImageView.setImageResource(R.drawable.wifi);
+                    }
+                    wifiImageView.setPadding(-100,300,0,0);
+                    veganImageView.setPadding(100,300,0,0);
 
                     titleTextView.setText(spots.getSpost().get(i).getName());
                     titleTextView.setId(i);
@@ -73,8 +96,24 @@ public class AllSpotsActivity extends AppCompatActivity {
                     categoryTextView.setTextSize(20);
                     categoryTextView.setPadding(0,100,0,0);
 
+                    TextView ratingTextView = new TextView(AllSpotsActivity.this);
+                    ratingTextView.setText("Rating: " + Double.toString(spots.getSpost().get(i).getRating()));
+                    ratingTextView.setId(i);
+                    ratingTextView.setTextSize(20);
+                    ratingTextView.setPadding(0,200,0,0);
+
+                    TextView priceTextView = new TextView(AllSpotsActivity.this);
+                    priceTextView.setText("Price: " + Double.toString(spots.getSpost().get(i).getPrices()));
+                    priceTextView.setId(i);
+                    priceTextView.setTextSize(20);
+                    priceTextView.setPadding(0,250,0,0);
+
                     card.addView(titleTextView);
                     card.addView(categoryTextView);
+                    card.addView(ratingTextView);
+                    card.addView(priceTextView);
+                    card.addView(veganImageView);
+                    card.addView(wifiImageView);
                     final int finalI = i;
                     card.setOnClickListener(new View.OnClickListener() {
                         @Override

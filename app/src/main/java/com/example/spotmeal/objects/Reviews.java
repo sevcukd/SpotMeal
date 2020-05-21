@@ -1,27 +1,21 @@
 package com.example.spotmeal.objects;
 
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+import org.codehaus.jackson.annotate.JsonProperty;
 
 import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 
+
+
+
 public class Reviews {
+    @JsonProperty("count")
     private int count;
-
-    public List<Rows> getRows() {
-        return rows;
-    }
-
-    public void setRows(List<Rows> rows) {
-        this.rows = rows;
-    }
-
+    @JsonProperty("rows")
     private List<Rows>  rows;
 
 
-
-    public Reviews(){
-    }
 
 
     public int getCount() {
@@ -31,4 +25,22 @@ public class Reviews {
     public void setCount(int count) {
         this.count = count;
     }
+
+    public List<Rows> getRows() {
+        return rows;
+    }
+
+    public void setRows(List<Rows> rows) {
+        this.rows = rows;
+    }
+
+
+
+
+
+
+
+    public Reviews(){
+    }
+
 }

@@ -16,20 +16,29 @@ public class SpotById {
     private String phone;
     private String description;
     private boolean hasFreeWifi;
+    private boolean approved;
+    private String user;
+    private double prices;
+    private double rating;
+    private String createdAt;
+    private String updatedAt;
+    private List<WorkingTime> workingTime;
+
+    public List<WorkingTime> getWorkingTime() {
+        return workingTime;
+    }
+
+
+
 
     public void setWorkingTime(List<WorkingTime> workingTime) {
         this.workingTime = workingTime;
     }
 
-    private List<WorkingTime> workingTime;
 
 
 
-    private boolean approved;
-    private String user;
 
-    private double prices;
-    private double rating;
 
     public double getRating() {
         return rating;
@@ -48,8 +57,7 @@ public class SpotById {
     }
 
 
-    private String createdAt;
-    private String updatedAt;
+
 
     public SpotById() {
 

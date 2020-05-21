@@ -12,6 +12,16 @@ public class Links {
     private  final String CURRENT_USER = "me/";
 
 
+    public URL getReviewsURL(){
+        URL url = null;
+        try{
+            url = new URL(this.BASE_URL+this.REVIEWS);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        return url;
+    }
+
     public URL getSpotsURL(){
         URL url = null;
         try{
